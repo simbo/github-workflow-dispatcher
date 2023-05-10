@@ -161,6 +161,10 @@ dd {
   padding: 0.4em 0.8em;
   text-align: center;
   font-size: 0.65em;
+
+  a {
+    color: inherit;
+  }
 }
 
 /**
@@ -200,12 +204,29 @@ dd {
 .text {
   margin: 1em 0;
 
-  a {
-    color: #2f81f7;
-  }
-
   &.auto {
     width: auto;
+  }
+}
+
+.svg-icon {
+  display: inline-block;
+  position: relative;
+  width: 1.2em;
+  height: 0;
+  padding-bottom: 1.2em;
+  vertical-align: text-bottom;
+
+  svg {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+  }
+
+  path {
+    fill: currentColor;
   }
 }
 
