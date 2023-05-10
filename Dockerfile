@@ -1,15 +1,9 @@
-FROM node:18-slim
+FROM node:18-alpine
 
 WORKDIR /app
 
-COPY src ./src
-COPY static ./static
-COPY styles ./styles
-COPY views ./views
 COPY .env-production .
-COPY package-lock.json .
-COPY package.json .
-COPY tsconfig.json .
+COPY . .
 
 ENV HOSTNAME=0.0.0.0
 ENV PORT=3000
