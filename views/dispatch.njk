@@ -1,0 +1,35 @@
+{% extends "base.njk" %}
+
+{% block content %}
+  <div class="column">
+    <div class="icon column-item">🛎️</div>
+    <div class="headline column-item">Dispatch succeeded.</div>
+    <a href="{{ workflowURL }}" class="subline column-item" id="redirect-countdown">&nbsp;</a>
+    <dl class="text column-item">
+      <dt>Owner</dt>
+      <dd><pre>{{ owner }}</pre></dd>
+      <dt>Repo</dt>
+      <dd><pre>{{ repo }}</pre></dd>
+      <dt>Ref</dt>
+      <dd><pre>{{ ref }}</pre></dd>
+      <dt>Workflow</dt>
+      <dd><pre>{{ workflowFile }}</pre></dd>
+      <dt>Inputs</dt>
+      <dd><pre>{{ workflowInputs | dump(2) }}</pre></dd>
+    </dl>
+  </div>
+  <script>
+    const el = document.getElementById('redirect-countdown');
+    let count = 5;
+    function countdown() {
+      el.innerHTML = `Redirecting${ count > 0 ? ` in ${count}` : ''}…`;
+      if (count > 0) {
+        window.setTimeout(countdown, 1000);
+        count--;
+      } else {
+        window.location = '{{ workflowURL }}';
+      }
+    }
+    countdown();
+  </script>
+{% endblock %}

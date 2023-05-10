@@ -1,0 +1,8 @@
+{
+  "watch": ["src", "package.json", ".env-development"],
+  "ext": "ts",
+  "exec": "ts-node-esm ./src/main.ts",
+  "env": {
+    "NODE_ENV": "development"
+  }
+}

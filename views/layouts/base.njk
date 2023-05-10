@@ -1,0 +1,18 @@
+<html lang="en-us">
+  <head>
+    {% block head %}
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>{{ appTitle }}</title>
+      <link rel="stylesheet" href="/styles/base.css" />
+    {% endblock %}
+  </head>
+  <body class="column">
+    <div class="content column-item">{% block content %}{% endblock %}</div>
+    <div class="footer column-item">
+      <div class="app-version">
+        <a href="{{ appHomepage }}">{{ appTitle }} v{{ appVersion }}</a>
+      </div>
+    </div>
+  </body>
+</html>

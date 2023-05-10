@@ -1,0 +1,29 @@
+{
+  "arrowParens": "avoid",
+  "importOrder": ["<THIRD_PARTY_MODULES>", "^src/", "^\\.\\.(/|$)", "^\\.(/|$)"],
+  "importOrderBuiltinModulesToTop": true,
+  "importOrderCaseInsensitive": true,
+  "importOrderCombineTypeAndValueImports": true,
+  "importOrderMergeDuplicateImports": true,
+  "importOrderParserPlugins": ["typescript", "decorators-legacy"],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true,
+  "printWidth": 120,
+  "singleQuote": true,
+  "trailingComma": "none",
+  "overrides": [
+    {
+      "files": "*.md",
+      "options": {
+        "printWidth": 80,
+        "proseWrap": "always"
+      }
+    },
+    {
+      "files": "*.hbs",
+      "options": {
+        "singleQuote": false
+      }
+    }
+  ]
+}

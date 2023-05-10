@@ -1,0 +1,27 @@
+# compiled output
+/dist
+/node_modules
+/static/styles
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+
+# IDEs
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# environment settings
+.env-*
+!.env-sample
+
+# git secret
+.gitsecret/keys/random_seed
+!*.secret

@@ -1,0 +1,63 @@
+{
+  "name": "github-workflow-dispatcher",
+  "title": "GitHub Workflow Dispatcher",
+  "version": "1.0.0",
+  "description": "A small HTTP server using node.js and the hapi framework, that enables you to trigger GitHub Actions workflows using simple links (aka HTTP GET requests).",
+  "author": "Simon Lepel <simbo@simbo.de> (https://simbo.de/)",
+  "license": "MIT",
+  "homepage": "https://github.com/dh-io-owcc/github-workflow-dispatcher#readme",
+  "bugs": {
+    "url": "https://github.com/dh-io-owcc/github-workflow-dispatcher/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dh-io-owcc/github-workflow-dispatcher.git"
+  },
+  "private": true,
+  "engines": {
+    "node": "^18"
+  },
+  "type": "module",
+  "scripts": {
+    "build": "rm -rf dist && tsc --project tsconfig.json",
+    "css": "rm -rf static/styles && sass --style=compressed styles/:static/styles/",
+    "css:watch": "npm run css -- --watch",
+    "format": "prettier --check .",
+    "format:fix": "prettier --write .",
+    "lint": "eslint \"**/*.ts\"",
+    "lint:fix": "npm run lint -- --fix",
+    "preflight": "npm run format && npm run lint && npm run build && npm run css",
+    "start": "npm run start:dev",
+    "start:dev": "nodemon",
+    "start:prod": "npm run css && npm run build && node ./dist/main.js",
+    "upgrade": "npx --yes npm-check-updates -u -t minor && npx --yes npm-check-updates --interactive --reject typescript,@types/node && npm i"
+  },
+  "dependencies": {
+    "@hapi/boom": "^10.0.1",
+    "@hapi/hapi": "^21.3.2",
+    "@hapi/inert": "^7.1.0",
+    "@hapi/vision": "^7.0.1",
+    "@octokit/auth-oauth-app": "^5.0.5",
+    "@octokit/request": "^6.2.3",
+    "@octokit/rest": "^19.0.7",
+    "dotenv": "^16.0.3",
+    "joi": "^17.9.2",
+    "nunjucks": "^3.2.4",
+    "path-slashes": "^2.0.1"
+  },
+  "devDependencies": {
+    "@ianvs/prettier-plugin-sort-imports": "^3.7.2",
+    "@types/hapi__vision": "^5.5.4",
+    "@types/node": "18.16.6",
+    "@typescript-eslint/eslint-plugin": "^5.59.5",
+    "@typescript-eslint/parser": "^5.59.5",
+    "eslint": "^8.40.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-unicorn": "^47.0.0",
+    "nodemon": "^2.0.22",
+    "prettier": "^2.8.8",
+    "sass": "^1.62.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.5"
+  }
+}
