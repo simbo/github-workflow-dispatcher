@@ -18,8 +18,8 @@ GitHub API. For authentication, it uses GitHub OAuth to create a user token that
 is used for further requests. This way it is ensured, that only users with
 sufficient privileges can trigger a workflow.
 
-To use _GitHub Workflow Dispatcher_ with your GitHub Enterprise installation,
-you need to host your own instance using the respective environment options.
+To use _GitHub Workflow Dispatcher_ with your GitHub Enterprise environment, you
+need to host your own instance using the respective environment options.
 
 ## Development
 
