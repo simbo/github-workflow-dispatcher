@@ -1,5 +1,9 @@
 {% extends "base.njk" %}
 
+{% block head %}
+  <script src="/scripts/dispatch.js" type="module" defer="defer"></script>
+{% endblock %}}
+
 {% block content %}
   <div class="column">
 
@@ -7,7 +11,7 @@
 
     <div class="headline column-item">Dispatch succeeded.</div>
 
-    <a href="{{ workflowURL }}" class="subline column-item" id="redirect-countdown">&nbsp;</a>
+    <a href="{{ workflowURL }}" class="subline column-item">&nbsp;</a>
 
     <dl class="text column-item">
       <dt>Owner</dt>
@@ -23,20 +27,4 @@
     </dl>
 
   </div>
-
-  <script>
-    const el = document.getElementById('redirect-countdown');
-    let count = 5;
-    function countdown() {
-      el.innerHTML = `Redirecting${ count > 0 ? ` in ${count}` : ''}…`;
-      if (count > 0) {
-        window.setTimeout(countdown, 1000);
-        count--;
-      } else {
-        window.location = '{{ workflowURL }}';
-      }
-    }
-    countdown();
-  </script>
-
 {% endblock %}
