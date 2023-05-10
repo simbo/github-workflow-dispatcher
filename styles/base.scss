@@ -229,10 +229,14 @@ dd {
 
 .text {
   margin: 1em 0;
+}
 
-  &.auto {
-    width: auto;
-  }
+.center {
+  text-align: center;
+}
+
+.auto {
+  width: auto;
 }
 
 .icon {

@@ -6,14 +6,11 @@
     <h1 class="headline column-item">{{ appTitle }}</h1>
     <div class="subline column-item">Triggering workflow runs via a simple link.</div>
     <div class="text column-item">
-      <p>This service enables you, to trigger GitHub Actions workflow runs using a GET request.</p>
-
+      <p class="center">This service enables you, to trigger GitHub Actions workflow runs using a GET request.</p>
       <h2>Usage</h2>
       <pre>/dispatch/<span class="path">owner</span>/<span class="path">repo</span>/<span class="path">ref</span>/<span class="path">workflow</span>?<span class="query">input=value</span></pre>
-
       <h2>Example</h2>
       <pre>/dispatch/<span class="path">my-org</span>/<span class="path">my-project</span>/<span class="path">main</span>/<span class="path">deploy</span>?<span class="query">env=test</span>&<span class="query">version=1.2.3</span></pre>
-
       <h2>Parameters</h2>
       <dl>
         <dt><code><span class="path">owner</span></code></dt>
@@ -23,15 +20,13 @@
         <dt><code><span class="path">ref</span></code></dt>
         <dd>The git ref (branch, tag or commit) for the workflow.</dd>
         <dt><code><span class="path">workflow</span></code></dt>
-        <dd>The filename of the workflow with optional file ending (defaults to <code>.yml</code>).</dd>
+        <dd>The file name of the workflow with optional file ending (defaults to <code>.yml</code>).</dd>
         <dt><code><em><span class="query">Query</span></em></code></dt>
         <dd>The inputs for the workflow with corresponding values. Due to GitHub limitations, there is a maximum of 10 inputs.</dd>
       </dl>
       <p>When creating your dispatch URL, ensure all path and query parameters are <a href="https://www.urlencoder.org/">URL-encoded</a>.</p>
-
       <h2>Authentication</h2>
       <p>Users who open a dispatch URL will go through the GitHub OAuth process, that provides a user token for the service to call the GitHub API. This way only users with required privileges are enabled to trigger a workflow dispatch.</p>
-
       <h2>More</h2>
       <p>See the <a href="https://github.com/simbo/github-workflow-dispatcher">repository of GitHub Workflow Dispatcher</a> for more information.</p>
     </div>
