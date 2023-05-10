@@ -70,4 +70,4 @@ docker run -itd -p 8080:3000 -e BASE_URL=http://localhost:8080/ github-workflow-
 
 ## License and Author
 
-[MIT &copy; Simon Lepel](http://simbo.mit-license.org/)
+[MIT &copy; Simon Lepel](https://simbo.mit-license.org/)
