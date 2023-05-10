@@ -28,6 +28,7 @@ Requirements:
 
 - node.js >= 18.x
 - git-secret
+- docker (optional)
 
 ### Git Secrets
 
