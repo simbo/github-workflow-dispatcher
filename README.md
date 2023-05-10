@@ -19,7 +19,8 @@ is used for further requests. This way it is ensured, that only users with
 sufficient privileges can trigger a workflow.
 
 To use _GitHub Workflow Dispatcher_ with your GitHub Enterprise environment, you
-need to host your own instance using the respective environment options.
+need to host your own instance using the respective
+[environment options](https://github.com/simbo/github-workflow-dispatcher/blob/main/.env-sample#L18-L20).
 
 ## Development
 
