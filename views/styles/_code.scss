@@ -1,0 +1,31 @@
+/**
+ * Code
+ */
+
+code,
+pre {
+  font-family: $fontMono;
+  background-color: var(--color-code-background);
+  border-radius: 0.375em;
+  padding: 0.2em 0.4em;
+}
+
+code {
+  word-wrap: break-word;
+}
+
+pre {
+  overflow: scroll;
+}
+
+/**
+ * Code Highlighting
+ */
+
+.path {
+  color: var(--color-code-highlight-a);
+}
+
+.query {
+  color: var(--color-code-highlight-b);
+}

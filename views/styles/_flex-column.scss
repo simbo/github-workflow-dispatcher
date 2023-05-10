@@ -1,0 +1,15 @@
+/**
+ * Flex Column
+ */
+
+.column {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  align-items: center;
+}
+
+.column-item {
+  display: block;
+  max-width: 100%;
+}

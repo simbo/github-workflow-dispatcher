@@ -1,0 +1,99 @@
+/**
+ * Page Grid
+ */
+
+.content {
+  flex: 1 0 auto;
+  padding-bottom: 2em;
+}
+
+.footer {
+  flex: 0 0 auto;
+  padding: 0.4em 0.8em;
+  text-align: center;
+  font-size: 0.65em;
+  color: var(--color-secondary);
+
+  a {
+    color: inherit;
+  }
+}
+
+/**
+ * Page Elements
+ */
+
+.banner,
+.headline,
+.subline,
+.text {
+  display: block;
+  margin: 0;
+  font-weight: normal;
+  width: 800px;
+}
+
+.banner,
+.headline,
+.subline {
+  text-align: center;
+}
+
+.banner {
+  font-size: 10em;
+}
+
+.headline {
+  font-size: 3em;
+}
+
+.subline {
+  color: var(--color-secondary);
+  font-size: 2em;
+  margin-bottom: 1em;
+}
+
+.text {
+  margin: 1em 0;
+}
+
+.center {
+  text-align: center;
+}
+
+.auto {
+  width: auto;
+}
+
+.icon {
+  display: inline-block;
+  position: relative;
+  width: 1.2em;
+  height: 0;
+  padding-bottom: 1.2em;
+  vertical-align: text-bottom;
+
+  svg {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+  }
+
+  path {
+    fill: currentColor;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .banner {
+    font-size: 6em;
+  }
+  .headline {
+    font-size: 2em;
+  }
+  .subline {
+    font-size: 1.5em;
+  }
+}

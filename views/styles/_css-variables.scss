@@ -1,0 +1,27 @@
+/**
+ * CSS Variables
+ */
+
+:root {
+  --color-background: #ffffff;
+  --color-primary: #1f2328;
+  --color-secondary: #656d76;
+  --color-link: #0969da;
+
+  --color-code-background: #f6f8fa;
+  --color-code-highlight-a: #116329;
+  --color-code-highlight-b: #8250df;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: #0d1117;
+    --color-primary: #e6edf3;
+    --color-secondary: #7d8590;
+    --color-link: #2f81f7;
+
+    --color-code-background: #343942;
+    --color-code-highlight-a: #7ee787;
+    --color-code-highlight-b: #d2a8ff;
+  }
+}
