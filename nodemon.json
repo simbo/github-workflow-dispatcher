@@ -1,8 +1,8 @@
 {
-  "watch": ["src", "package.json", ".env-development"],
-  "ext": "ts",
-  "exec": "ts-node-esm ./src/main.ts",
   "env": {
     "NODE_ENV": "development"
-  }
+  },
+  "exec": "ts-node-esm ./src/main.ts",
+  "ext": "ts",
+  "watch": ["src", "package.json", ".env-development", "tsconfig.json"]
 }

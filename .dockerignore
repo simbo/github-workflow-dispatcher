@@ -16,6 +16,7 @@
 /.prettierrc
 /Dockerfile
 /LICENSE.md
+/nodemon.browser.json
 /nodemon.json
 /README.md
 

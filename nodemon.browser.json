@@ -1,0 +1,5 @@
+{
+  "exec": "npm run build:js",
+  "ext": "ts",
+  "watch": ["views/scripts", "tsconfig.browser.json"]
+}

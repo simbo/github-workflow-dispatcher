@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./views/scripts",
+    "inlineSources": true,
+    "lib": ["DOM", "DOM.Iterable"],
+    "outDir": "./static/scripts",
+    "rootDir": "./views/scripts",
+    "target": "ES6"
+  },
+  "extends": "./tsconfig.json",
+  "include": ["./views/scripts/**/*"]
+}
