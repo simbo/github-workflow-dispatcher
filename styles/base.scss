@@ -7,6 +7,32 @@ $fontSerif: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetic
 $fontMono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
 
 /**
+ * CSS Variables
+ */
+
+:root {
+  --color-background: #ffffff;
+  --color-primary: #1f2328;
+  --color-secondary: #656d76;
+  --color-link: #0969da;
+  --color-code-background: #f6f8fa;
+  --color-code-highlight-a: #116329;
+  --color-code-highlight-b: #8250df;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: #0d1117;
+    --color-primary: #e6edf3;
+    --color-secondary: #7d8590;
+    --color-link: #2f81f7;
+    --color-code-background: #343942;
+    --color-code-highlight-a: #7ee787;
+    --color-code-highlight-b: #d2a8ff;
+  }
+}
+
+/**
  * Root Elements
  */
 
@@ -26,8 +52,8 @@ body {
 html {
   box-sizing: border-box;
   font-family: $fontSerif;
-  background: #0d1117;
-  color: #e6edf3;
+  background: var(--color-background);
+  color: var(--color-primary);
   font-size: 18px;
   line-height: 1.4;
   -webkit-text-size-adjust: 100%;
@@ -75,10 +101,9 @@ h6 {
 
 a {
   text-decoration: none;
-  color: inherit;
+  color: var(--color-link);
 
   &:hover {
-    color: rgba(255, 255, 255, 0.7);
     text-decoration: underline;
   }
 }
@@ -90,7 +115,7 @@ a {
 code,
 pre {
   font-family: $fontMono;
-  background-color: rgba(110, 118, 129, 0.4);
+  background-color: var(--color-code-background);
   border-radius: 0.375em;
 }
 
@@ -161,6 +186,7 @@ dd {
   padding: 0.4em 0.8em;
   text-align: center;
   font-size: 0.65em;
+  color: var(--color-secondary);
 
   a {
     color: inherit;
@@ -196,7 +222,7 @@ dd {
 }
 
 .subline {
-  color: #7d8590;
+  color: var(--color-secondary);
   font-size: 2em;
   margin-bottom: 1em;
 }
@@ -209,7 +235,7 @@ dd {
   }
 }
 
-.svg-icon {
+.icon {
   display: inline-block;
   position: relative;
   width: 1.2em;
@@ -235,12 +261,16 @@ dd {
  */
 
 .path {
-  color: #77c777;
+  color: var(--color-code-highlight-a);
 }
 
 .query {
-  color: #90c6ee;
+  color: var(--color-code-highlight-b);
 }
+
+/**
+ * Media Queries
+ */
 
 @media screen and (max-width: 768px) {
   html {
