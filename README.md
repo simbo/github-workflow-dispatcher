@@ -56,7 +56,7 @@ npm start
 
 The project contains a `Dockerfile` to create an image.
 
-The docker build expects a `.env-production` file to be present.
+The docker build expects a `.env-production` file to be present (revealed).
 
 ```sh
 # build docker image
