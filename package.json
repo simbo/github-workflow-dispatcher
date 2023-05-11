@@ -20,8 +20,8 @@
   "type": "module",
   "scripts": {
     "build": "rm -rf dist && tsc --project tsconfig.json",
-    "build:css": "rm -rf static/styles && sass --style=compressed views/styles/:static/styles/",
-    "build:css:watch": "npm run css -- --watch",
+    "build:css": "rm -rf static/styles && sass --embed-sources --style=compressed views/styles/:static/styles/",
+    "build:css:watch": "npm run build:css -- --watch",
     "build:js": "rm -rf static/scripts && tsc --project tsconfig.browser.json && ./terser.sh",
     "build:js:watch": "nodemon --config nodemon.browser.json",
     "format": "prettier --check .",
