@@ -53,7 +53,7 @@ need to host your own instance using the respective
 
 ## Development
 
-Requirements:
+### Requirements
 
 - node.js >= 18.x
 - git-secret
