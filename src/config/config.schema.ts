@@ -17,6 +17,7 @@ export const configSchema = Joi.object<Config>({
   githubAppID: Joi.string().token().required(),
   githubAppSecret: Joi.string().token().required(),
   isGHE: Joi.boolean().required(),
+  cookieTTL: Joi.number().positive().allow(null).required(), // eslint-disable-line unicorn/no-null
   cryptoKey: Joi.string().min(128).required(),
   cryptoIV: Joi.string().min(128).required()
 });

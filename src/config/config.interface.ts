@@ -13,6 +13,7 @@ export interface Config {
   githubAppID: string;
   githubAppSecret: string;
   isGHE: boolean;
+  cookieTTL: number | null;
   cryptoKey: string;
   cryptoIV: string;
 }

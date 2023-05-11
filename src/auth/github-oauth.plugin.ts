@@ -1,6 +1,6 @@
 import { Plugin, Request, ResponseToolkit, Server } from '@hapi/hapi';
 
-import { isHTTPS } from '../config/config.js';
+import { cookieTTL, isHTTPS } from '../config/config.js';
 import { debugLog } from '../utils/debug-log.js';
 
 import { githubOauthScheme } from './github-oauth-scheme.js';
@@ -15,7 +15,7 @@ export const githubOauthPlugin: Plugin<never> = {
   async register(server: Server) {
     // setup the cookie to store the auth data
     server.state(GITHUB_OAUTH_COOKIE, {
-      ttl: 1000 * 60 * 60 * 24 * 30, // 30 days
+      ttl: cookieTTL,
       isSecure: isHTTPS,
       isHttpOnly: true,
       encoding: 'none', // cookie data is already encrypted

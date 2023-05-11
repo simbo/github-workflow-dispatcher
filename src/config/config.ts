@@ -1,6 +1,7 @@
 import { env } from 'node:process';
 
 import { config as parseEnvData } from 'dotenv';
+import millisecond from 'millisecond';
 
 import { rootPath } from '../utils/root-path.js';
 
@@ -19,6 +20,9 @@ export const githubApiURL = env.GITHUB_API_URL || '';
 
 const githubHostnameRegex = /(\/|\.)github\.com$/;
 
+const ttl = millisecond(env.COOKIE_TTL || '');
+export const cookieTTL = ttl > 0 ? ttl : null; // eslint-disable-line unicorn/no-null
+
 const cfg: Config = {
   nodeEnv,
   isDevelopment: nodeEnv === NodeEnv.Development,
@@ -35,6 +39,7 @@ const cfg: Config = {
     githubHostnameRegex.test(new URL(githubBaseURL).hostname) ||
     githubHostnameRegex.test(new URL(githubApiURL).hostname)
   ),
+  cookieTTL,
   cryptoKey: env.CRYPTO_KEY || '',
   cryptoIV: env.CRYPTO_IV || ''
 };
