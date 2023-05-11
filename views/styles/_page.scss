@@ -65,6 +65,14 @@
   width: auto;
 }
 
+.success {
+  color: var(--color-success);
+}
+
+.failure {
+  color: var(--color-failure);
+}
+
 .icon {
   display: inline-block;
   position: relative;

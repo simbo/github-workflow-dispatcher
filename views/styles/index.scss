@@ -1,0 +1,43 @@
+@import 'variables';
+@import 'css-variables-forms';
+@import 'forms';
+
+/**
+ * Generate Dispatch URL Form
+ */
+
+.generate-dispatch-url {
+  input {
+    font-family: $fontMono;
+  }
+
+  .inputs {
+    input {
+      width: 30%;
+      margin-bottom: 0.5em;
+    }
+
+    input:nth-of-type(2n) {
+      width: calc(70% - 0.5em);
+      margin-left: 0.5em;
+    }
+  }
+
+  button.primary {
+    margin-top: 0.5em;
+  }
+
+  .copy-result {
+    display: inline-block;
+    vertical-align: bottom;
+    margin: 0 0 0 1em;
+    line-height: 2.33;
+    transition: opacity ease 1s;
+    opacity: 0;
+
+    &.result {
+      opacity: 1;
+      transition-duration: 0.2s;
+    }
+  }
+}

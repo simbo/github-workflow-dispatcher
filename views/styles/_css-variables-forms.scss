@@ -1,0 +1,77 @@
+/**
+ * CSS Variables
+ */
+
+:root {
+  --color-button: #24292f;
+  --color-button--disabled: #8c959f;
+  --color-button-border: rgb(31 35 40 / 15%);
+  --color-button-border--hover: rgb(31 35 40 / 15%);
+  --color-button-border--active: rgb(31 35 40 / 15%);
+  --color-button-border--disabled: rgb(31 35 40 / 15%);
+  --color-button-background: #f6f8fa;
+  --color-button-background--hover: #f3f4f6;
+  --color-button-background--active: #ebecf0;
+  --color-button-background--disabled: #f6f8fa;
+  --shadow-button: 0 1px 0 rgba(31, 35, 40, 0.04);
+  --shadow-button-inset: inset 0 1px 0 rgba(255, 255, 255, 0.25);
+
+  --color-button-primary: #ffffff;
+  --color-button-primary--disabled: rgb(255 255 255 / 80%);
+  --color-button-primary-border: rgb(31 35 40 / 15%);
+  --color-button-primary-border--hover: rgba(31, 35, 40, 0.15);
+  --color-button-primary-border--active: rgb(31 35 40 / 15%);
+  --color-button-primary-border--disabled: rgb(31 35 40 / 15%);
+  --color-button-primary-background: #1f883d;
+  --color-button-primary-background--hover: #1a7f37;
+  --color-button-primary-background--active: rgb(24 119 51);
+  --color-button-primary-background--disabled: #94d3a2;
+  --shadow-button-primary: 0 1px 0 rgba(31, 35, 40, 0.1);
+  --shadow-btn-primary-inset: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+  --shadow-button-primary-active: inset 0 1px 0 rgba(0, 45, 17, 0.2);
+
+  --color-input-border: #d0d7de;
+  --color-input-border--focus: #0969da;
+  --color-input-background: #f6f8fa;
+  --color-input-background--focus: #ffffff;
+  --shadow-input-inset: 0 0 transparent;
+  --shadow-input-inset--focus: inset 0 0 0 1px #0969da;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-button: #c9d1d9;
+    --color-button--disabled: #484f58;
+    --color-button-border: rgb(240 246 252 / 10%);
+    --color-button-border--hover: #8b949e;
+    --color-button-border--active: #6e7681;
+    --color-button-border--disabled: rgb(240 246 252 / 10%);
+    --color-button-background: #21262d;
+    --color-button-background--hover: #30363d;
+    --color-button-background--active: #282e33;
+    --color-button-background--disabled: #21262d;
+    --shadow-button: 0 0 transparent;
+    --shadow-button-inset: 0 0 transparent;
+
+    --color-button-primary: #ffffff;
+    --color-button-primary--disabled: rgb(255 255 255 / 50%);
+    --color-button-primary-border: rgba(240, 246, 252, 0.1);
+    --color-button-primary-border--hover: rgba(240, 246, 252, 0.1);
+    --color-button-primary-border--active: #6e7681;
+    --color-button-primary-border--disabled: rgb(240 246 252 / 10%);
+    --color-button-primary-background: #238636;
+    --color-button-primary-background--hover: #2ea043;
+    --color-button-primary-background--active: #238636;
+    --color-button-primary-background--disabled: rgb(35 134 54 / 60%);
+    --shadow-button-primary: 0 0 transparent;
+    --shadow-btn-primary-inset: 0 0 transparent;
+    --shadow-button-primary-active: inset 0 1px 0 rgba(0, 45, 17, 0.2);
+
+    --color-input-border: #30363d;
+    --color-input-border--focus: #2f81f7;
+    --color-input-background: #0d1117;
+    --color-input-background--focus: #010409;
+    --shadow-input-inset: 0 0 transparent;
+    --shadow-input-inset--focus: inset 0 0 0 1px #2f81f7;
+  }
+}

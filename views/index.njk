@@ -1,5 +1,10 @@
 {% extends "base.njk" %}
 
+{% block head %}
+  <link rel="stylesheet" href="/styles/index.css">
+  <script src="/scripts/index.js" type="module" defer="defer"></script>
+{% endblock %}}
+
 {% block content %}
 
   <div class="column">
@@ -14,32 +19,83 @@
 
       <p class="center">This service enables you, to trigger GitHub Actions workflow runs using a GET request.</p>
 
+      <a id="usage"></a>
       <h2>Usage</h2>
+
       <pre>/dispatch/<span class="path">owner</span>/<span class="path">repo</span>/<span class="path">ref</span>/<span class="path">workflow</span>?<span class="query">input=value</span></pre>
 
+      <p>Use the <a href="#generate-dispatch-url">Dispatch URL Generator</a> for an easy-peasy setup.</p>
+
+      <a id="example"></a>
       <h2>Example</h2>
+
       <pre>/dispatch/<span class="path">my-org</span>/<span class="path">my-project</span>/<span class="path">main</span>/<span class="path">deploy</span>?<span class="query">env=test</span>&<span class="query">version=1.2.3</span></pre>
 
+      <a id="parameters"></a>
       <h2>Parameters</h2>
+
       <dl>
+
         <dt><code><span class="path">owner</span></code></dt>
         <dd>The name of the organization or user that owns the repository.</dd>
+
         <dt><code><span class="path">repo</span></code></dt>
         <dd>The name of the repository.</dd>
+
         <dt><code><span class="path">ref</span></code></dt>
         <dd>The git ref (branch, tag or commit) for the workflow.</dd>
+
         <dt><code><span class="path">workflow</span></code></dt>
         <dd>The file name of the workflow with optional file ending (defaults to <code>.yml</code>).</dd>
+
         <dt><code><em><span class="query">Query</span></em></code></dt>
         <dd>The optional inputs for the workflow with corresponding values. Due to GitHub limitations, there is a maximum of 10 inputs.</dd>
+
       </dl>
+
       <p>When creating your dispatch URL, ensure all path and query parameters are <a href="https://www.urlencoder.org/">URL-encoded</a>.</p>
 
+      <a id="authentication"></a>
       <h2>Authentication</h2>
+
       <p>Users who open a dispatch URL will go through the GitHub OAuth process, that provides a user token for the service to call the GitHub API. This way only users with required privileges are enabled to trigger a workflow dispatch.</p>
 
-      <h2>More</h2>
-      <p>See the <a href="https://github.com/simbo/github-workflow-dispatcher">repository of GitHub Workflow Dispatcher</a> for more information.</p>
+      <a id="generate-dispatch-url"></a>
+      <h2>Generate Dispatch URL</h2>
+
+      <form class="generate-dispatch-url">
+        <dl>
+
+          <dt><label><span class="path">Owner</span></label></dt>
+          <dd><input name="owner" type="text" placeholder="Name of organization or user"></dd>
+
+
+          <dt><label><span class="path">Repo</span></label></dt>
+          <dd><input name="repo" type="text" placeholder="Name of repository"></dd>
+
+
+          <dt><label><span class="path">Ref</span></label></dt>
+          <dd><input name="ref" type="text" placeholder="Git branch, tag or commit"></dd>
+
+
+          <dt><label><span class="path">Workflow</span></label></dt>
+          <dd><input name="workflow" type="text" placeholder="Workflow file name with optional file ending"></dd>
+
+          <dt><label><span class="query">Inputs</span></label></dt>
+          <dd class="inputs">
+            <input name="name" type="text" placeholder="Input name"><input name="value" type="text" placeholder="Input value">
+            <button name="add-input">Add Input</button>
+          </dd>
+
+          <dt><label>Dispatch URL</label></dt>
+          <dd>
+            <input name="url" type="text" placeholder="Enter required values above" readonly="readonly">
+            <button name="copy" class="primary" disabled="disabled">Copy to Clipboard</button>
+            <small class="copy-result">Copied!</small>
+          </dd>
+
+        </dl>
+      </form>
 
     </div>
 
