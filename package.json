@@ -21,6 +21,7 @@
   "scripts": {
     "build": "npm run build:js && npm run build:css && npm run build:server",
     "build:server": "rm -rf dist && tsc --project tsconfig.json",
+    "build:server:watch": "nodemon",
     "build:css": "rm -rf static/styles && sass --embed-sources --style=compressed views/styles/:static/styles/",
     "build:css:watch": "npm run build:css -- --watch",
     "build:js": "rm -rf static/scripts && tsc --project tsconfig.browser.json && ./terser.sh",
@@ -30,8 +31,7 @@
     "lint": "eslint \"**/*.ts\"",
     "lint:fix": "npm run lint -- --fix",
     "preflight": "npm run format && npm run lint && npm run build",
-    "start": "concurrently --kill-others --names '📜,🎨,🌍' --prefix '{name}' npm:build:js:watch npm:build:css:watch npm:start:dev",
-    "start:dev": "nodemon",
+    "start": "concurrently --kill-others --names '📜,🎨,🌍' --prefix '{name}' npm:build:js:watch npm:build:css:watch npm:build:server:watch",
     "start:prod": "npm run build && node ./dist/main.js",
     "upgrade": "npx --yes npm-check-updates -u -t minor && npx --yes npm-check-updates --interactive --reject typescript,@types/node && npm i"
   },
