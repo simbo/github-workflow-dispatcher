@@ -22,6 +22,35 @@ To use _GitHub Workflow Dispatcher_ with your GitHub Enterprise environment, you
 need to host your own instance using the respective
 [environment options](https://github.com/simbo/github-workflow-dispatcher/blob/main/.env-sample#L18-L20).
 
+## Features
+
+- **General**
+
+  - 👔 full support for GitHub Enterprise (and also GitHub.com, of course)
+  - 🪪 using actual user privileges for accessing repository workflows
+  - 🐳 prepared for containerized deployment using Docker
+  - 🛠️ customizable configuration depending on environment
+  - 🧑‍💻 native Typescript project following strict rules and latest ECMAScript
+    standards
+
+- **Backend**
+
+  - 🧩 modular architecture via hapi's plugin system
+  - 🐙 GitHub OAuth and API implementation using latest specification and
+    official `@octokit/*` packages
+  - 🗄️ server-side in-memory caching of precompiled responses
+  - 🔒 secure cookie storage of authorization artifacts using AES 256 CBC
+    encryption
+  - 🎈 no persistent storage required
+
+- **Frontend**
+  - 💎 slick and simple, GitHub-inspired design
+  - 🪄 in-place usage documentation including dispatch URL generator
+  - 🤝 meaningfull error pages
+  - 🚀 optimized CSS and JavaScript assets without frameworks or 3rd-party
+    dependencies
+  - 🌗 switching light and dark theme depending on user preference
+
 ## Development
 
 Requirements:
