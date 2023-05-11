@@ -79,7 +79,7 @@ npm i
 # reveal secrets
 git secret reveal
 
-# start dev server
+# start watch tasks for server, js and css concurrently
 npm start
 ```
 

@@ -19,7 +19,8 @@
   },
   "type": "module",
   "scripts": {
-    "build": "rm -rf dist && tsc --project tsconfig.json",
+    "build": "npm run build:js && npm run build:css && npm run build:server",
+    "build:server": "rm -rf dist && tsc --project tsconfig.json",
     "build:css": "rm -rf static/styles && sass --embed-sources --style=compressed views/styles/:static/styles/",
     "build:css:watch": "npm run build:css -- --watch",
     "build:js": "rm -rf static/scripts && tsc --project tsconfig.browser.json && ./terser.sh",
@@ -28,10 +29,10 @@
     "format:fix": "prettier --write .",
     "lint": "eslint \"**/*.ts\"",
     "lint:fix": "npm run lint -- --fix",
-    "preflight": "npm run format && npm run lint && npm run build:js && npm run build:css && npm run build",
-    "start": "npm run start:dev",
+    "preflight": "npm run format && npm run lint && npm run build",
+    "start": "concurrently --kill-others --names '📜,🎨,🌍' --prefix '{name}' npm:build:js:watch npm:build:css:watch npm:start:dev",
     "start:dev": "nodemon",
-    "start:prod": "npm run build:css && npm run build:js && npm run build && node ./dist/main.js",
+    "start:prod": "npm run build && node ./dist/main.js",
     "upgrade": "npx --yes npm-check-updates -u -t minor && npx --yes npm-check-updates --interactive --reject typescript,@types/node && npm i"
   },
   "dependencies": {
@@ -55,6 +56,7 @@
     "@types/node": "18.16.6",
     "@typescript-eslint/eslint-plugin": "^5.59.5",
     "@typescript-eslint/parser": "^5.59.5",
+    "concurrently": "^8.0.1",
     "eslint": "^8.40.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-unicorn": "^47.0.0",
