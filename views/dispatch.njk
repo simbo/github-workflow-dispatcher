@@ -1,6 +1,7 @@
 {% extends "base.njk" %}
 
 {% block head %}
+  <script>const workflowURL = '{{ workflowURL }}';</script>
   <script src="/scripts/dispatch.js" type="module" defer="defer"></script>
 {% endblock %}}
 
@@ -14,16 +15,22 @@
     <a href="{{ workflowURL }}" class="subline column-item">&nbsp;</a>
 
     <dl class="text column-item">
+
       <dt>Owner</dt>
       <dd><pre>{{ owner }}</pre></dd>
+
       <dt>Repo</dt>
       <dd><pre>{{ repo }}</pre></dd>
+
       <dt>Ref</dt>
       <dd><pre>{{ ref }}</pre></dd>
+
       <dt>Workflow</dt>
       <dd><pre>{{ workflowFile }}</pre></dd>
+
       <dt>Inputs</dt>
       <dd><pre>{{ workflowInputs | dump(2) }}</pre></dd>
+
     </dl>
 
   </div>

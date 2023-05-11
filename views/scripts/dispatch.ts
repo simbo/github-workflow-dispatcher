@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
       window.setTimeout(countdown, 1000);
       count--;
     } else {
-      window.location.href = '{{ workflowURL }}';
+      window.location.href = workflowURL;
     }
   }
 
