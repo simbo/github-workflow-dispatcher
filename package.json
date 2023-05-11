@@ -5,13 +5,13 @@
   "description": "A small HTTP server using node.js and the hapi framework, that enables you to trigger GitHub Actions workflows using simple links (aka HTTP GET requests).",
   "author": "Simon Lepel <simbo@simbo.de> (https://simbo.de/)",
   "license": "MIT",
-  "homepage": "https://github.com/dh-io-owcc/github-workflow-dispatcher#readme",
+  "homepage": "https://github.com/simbo/github-workflow-dispatcher#readme",
   "bugs": {
-    "url": "https://github.com/dh-io-owcc/github-workflow-dispatcher/issues"
+    "url": "https://github.com/simbo/github-workflow-dispatcher/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dh-io-owcc/github-workflow-dispatcher.git"
+    "url": "git+https://github.com/simbo/github-workflow-dispatcher.git"
   },
   "private": true,
   "engines": {
