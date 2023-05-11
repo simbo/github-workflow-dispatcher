@@ -5,6 +5,7 @@ import { slashJoin } from 'path-slashes';
 
 import { GITHUB_OAUTH } from '../auth/github-oauth.constants.js';
 import { githubBaseURL } from '../config/config.js';
+import { clientCache } from '../utils/client-cache.js';
 import { debugLog } from '../utils/debug-log.js';
 
 import { dispatchWorkflowRun, getWorkflowInputsFromQuery } from './dispatcher-utils.js';
@@ -22,7 +23,8 @@ export const dispatcherRoute: ServerRoute = {
         ref: Joi.string().required(),
         workflow: Joi.string().required()
       })
-    }
+    },
+    cache: clientCache()
   },
   async handler(request: Request, h: ResponseToolkit) {
     const { owner, repo, ref, workflow } = request.params;
