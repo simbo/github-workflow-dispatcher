@@ -1,4 +1,4 @@
-import Hapi, { Server, ServerOptions } from '@hapi/hapi';
+import Hapi, { Server, ServerOptions, ServerRegisterPluginObject } from '@hapi/hapi';
 import { plugin as inert } from '@hapi/inert';
 import vision from '@hapi/vision';
 
@@ -22,7 +22,13 @@ export async function startServer(): Promise<Server> {
 
   const server = Hapi.server(serverOptions);
 
-  await server.register([vision, inert, errorHandlingPlugin, githubOauthPlugin, dispatcherPlugin]);
+  await server.register([
+    vision,
+    inert,
+    errorHandlingPlugin,
+    githubOauthPlugin,
+    dispatcherPlugin
+  ] as unknown as ServerRegisterPluginObject<unknown, void>[]);
 
   await addViewManager(server);
 

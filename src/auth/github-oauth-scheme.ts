@@ -78,7 +78,7 @@ export function githubOauthScheme(): ServerAuthSchemeObject {
         // if there were errors, cancel authentication
       } catch (error) {
         debugLog(request, [GITHUB_OAUTH, 'error'], `auth failed (${error})`);
-        return h.unauthenticated(error);
+        return h.unauthenticated(error as Error);
       }
     }
   };

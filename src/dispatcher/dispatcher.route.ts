@@ -36,7 +36,7 @@ export const dispatcherRoute: ServerRoute = {
       debugLog(request, [DISPATCHER], 'workflow dispatch succeeded');
     } catch (error) {
       debugLog(request, [DISPATCHER, 'error'], `workflow dispatch failed (${error})`);
-      return badRequest(error);
+      return badRequest(error as Error);
     }
 
     const workflowURL = slashJoin(githubBaseURL, owner, repo, 'actions/workflows', workflowFile);

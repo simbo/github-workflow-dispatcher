@@ -1,4 +1,5 @@
 import { Server } from '@hapi/hapi';
+import { ServerViewCompileAsync } from '@hapi/vision';
 import nunjucks from 'nunjucks';
 
 import { debugLog } from '../utils/debug-log.js';
@@ -47,5 +48,5 @@ export function templateEngine(server: Server) {
         .then(template => done(undefined, (context, options, callback) => template.render(context, callback)))
         .catch(done);
     }
-  };
+  } as { compile: ServerViewCompileAsync };
 }

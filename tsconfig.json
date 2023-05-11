@@ -10,7 +10,8 @@
     "rootDir": "./src",
     "skipLibCheck": true,
     "sourceMap": true,
-    "target": "ESNext"
+    "target": "ESNext",
+    "strict": true
   },
   "include": ["src/**/*"]
 }
