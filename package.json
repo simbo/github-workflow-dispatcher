@@ -28,7 +28,7 @@
     "format:fix": "prettier --write .",
     "lint": "eslint \"**/*.ts\"",
     "lint:fix": "npm run lint -- --fix",
-    "preflight": "npm run format && npm run lint && npm run build && npm run css",
+    "preflight": "npm run format && npm run lint && npm run build:js && npm run build:css && npm run build",
     "start": "npm run start:dev",
     "start:dev": "nodemon",
     "start:prod": "npm run build:css && npm run build:js && npm run build && node ./dist/main.js",
