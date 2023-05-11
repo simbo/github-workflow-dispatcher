@@ -64,19 +64,19 @@ need to host your own instance using the respective
 This project uses [`git-secret`](https://github.com/sobolevn/git-secret) to
 store sensitive information in the git repository.
 
-Before being able to decrypt the data, your public GPG key needs to be added to
-the list of allowed users.
+Before being able to decrypt the respective files, your public GPG key needs to
+be added to the list of allowed users.
 
 ### Setup
 
 ```sh
-# clone repo
+# clone project
 git clone git@github.com:simbo/github-workflow-dispatcher.git
 
 # install dependencies
 npm i
 
-# reveal secrets
+# decrypt secret files
 git secret reveal
 
 # start watch tasks for server, js and css concurrently
