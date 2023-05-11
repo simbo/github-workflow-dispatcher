@@ -1,5 +1,12 @@
 # GitHub Workflow Dispatcher
 
+[![License MIT](https://img.shields.io/badge/license-MIT-cccccc)](http://simbo.mit-license.org/)
+[![GitHub Repo](https://img.shields.io/badge/repo-public-87ceeb)](https://github.com/simbo/github-workflow-dispatcher)
+![Native Typescript Support](https://img.shields.io/badge/types-Typescript-0c7dbe)
+[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/simbo/github-workflow-dispatcher/ci.yml?branch=main)](https://github.com/simbo/github-workflow-dispatcher/actions/workflows/ci.yml)
+
+<!-- [![Coveralls Coverage](https://img.shields.io/coveralls/github/simbo/github-workflow-dispatcher)](https://coveralls.io/github/simbo/github-workflow-dispatcher) -->
+
 A small HTTP server using node.js and the [hapi](https://hapi.dev/) framework,
 that enables you to trigger GitHub Actions workflows using simple links (aka
 HTTP `GET` requests).
