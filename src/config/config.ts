@@ -26,7 +26,7 @@ const cfg: Config = {
   baseURL,
   hostname: env.HOSTNAME || '',
   port: Number.parseInt(env.PORT || '3000', 10),
-  isHTTPS: /^https:/.test(baseURL),
+  isHTTPS: baseURL.startsWith('https:'),
   githubBaseURL,
   githubApiURL,
   githubAppID: env.GITHUB_APP_CLIENT_ID || '',
