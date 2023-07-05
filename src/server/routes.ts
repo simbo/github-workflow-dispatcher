@@ -1,5 +1,4 @@
 import { Request, ResponseToolkit, ServerRoute } from '@hapi/hapi';
-import millisecond from 'millisecond';
 
 import { GITHUB_OAUTH } from '../auth/github-oauth.constants.js';
 import { isGHE } from '../config/config.js';
