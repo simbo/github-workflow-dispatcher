@@ -37,5 +37,11 @@ jobs:
       # - name: 💯 Report Coverage to Coveralls
       #   uses: coverallsapp/github-action@v2
 
+      - name: 👷‍♂️ Build static CSS
+        run: npm run build:css
+
+      - name: 👷‍♂️ Build static JS
+        run: npm run build:js
+
       - name: 👷‍♂️ Build
         run: npm run build
