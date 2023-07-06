@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 rootDir=$(cd "$(dirname "$0")" ; pwd -P)
 
