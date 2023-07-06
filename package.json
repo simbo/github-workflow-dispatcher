@@ -1,7 +1,7 @@
 {
   "name": "github-workflow-dispatcher",
   "title": "GitHub Workflow Dispatcher",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "A small HTTP server using node.js and the hapi framework, that enables you to trigger GitHub Actions workflows using simple links (aka HTTP GET requests).",
   "author": "Simon Lepel <simbo@simbo.de> (https://simbo.de/)",
   "license": "MIT",
